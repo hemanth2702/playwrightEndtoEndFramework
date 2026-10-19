@@ -1,27 +1,61 @@
-name: Playwright Tests
+name: Playwright First WorkFlow Tests
+
 on:
+# use # to comment the line of code on yml file.
+  #schedule:
+    #- cron: '30 14 * * 1-5' # Mon-Fri 8:00 PM IST
   push:
-    branches: [ main, master ]
+    branches: [master]
   pull_request:
-    branches: [ main, master ]
+    branches: [master]
+  workflow_dispatch:
+   
+
 jobs:
   test:
-    timeout-minutes: 60
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run UI tests
+        run: npx playwright test --project=ui
+        env:
+          ENV: ${{ github.event.inputs.environment || 'qa'}}
+          APP_URL: ${{ secrets.APP_URL }}
+          APPUSERNAME: ${{ secrets.APPUSERNAME }}
+          APPPASSWORD: ${{ secrets.APPPASSWORD }}
+          API_URL: ${{ secrets.API_URL }}
+          ACCESSTOKEN: ${{ secrets.ACCESSTOKEN }}
+          
+
+      - name: Upload HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-html-report
+          path: reports/html-report/
+          retention-days: 30
+
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results/
+          retention-days: 30

@@ -179,3 +179,9 @@ https://www.npmjs.com/package/reporting-labs
 
 
 https://gorest.co.in/my-account/access-tokens -->for access token
+
+
+github Actions:
+===============================
+go to the settings--> Secret and variable --> actions --> repositary secret --> from env qa add name and 
+secret code without space
