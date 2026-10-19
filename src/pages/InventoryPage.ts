@@ -15,7 +15,7 @@ private readonly cartOption;
 constructor(page:Page)
 {
     super(page)
-        this.productList=page.locator("div.inventory_container div.inventory_item_name ");
+        this.productList=page.locator("div.inventory_container div.inventory_item_name");
         this.footerLinks=page.locator("footer a");
         this.addToCartButton=page.getByText("Add to cart")
         this.cartOption=page.locator("a.shopping_cart_link");
@@ -37,18 +37,23 @@ async addProductIntoCart(pname:string)
 {
    let allProducts:Locator[] = await this.productList.all()
    for(let Product of allProducts){
-    if((await Product.innerText()).includes(pname))
+    let productName = await Product.innerText();
+    //if((await Product.innerText()).includes(pname))
+    if(productName.trim()===pname.trim())
     {
         //select
         await Product.click();
         break;
+    //     console.log(pname + " : added into cart");
+    //         return;
+    // 
     }
-    await this.page.waitForTimeout(2000);
+    
    }
    //add the product into cart
-   await this.addToCartButton.click();
-   console.log(pname +" :added into cart");
-   
+    await this.addToCartButton.click();
+    console.log(pname +" :added into cart");
+  // throw new Error("Product not found: " + pname);
 }
 
 async getAllFooterCount():Promise<number>
