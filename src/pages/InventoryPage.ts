@@ -17,7 +17,7 @@ constructor(page:Page)
     super(page)
         this.productList=page.locator("div.inventory_container div.inventory_item_name");
         this.footerLinks=page.locator("footer a");
-        this.addToCartButton=page.getByText("Add to cart")
+        this.addToCartButton=page.locator("button[class*='btn_small btn_inventory']");
         this.cartOption=page.locator("a.shopping_cart_link");
 }
 
