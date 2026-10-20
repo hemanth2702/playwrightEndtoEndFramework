@@ -20,6 +20,7 @@ private readonly cartoption;
         this.continueShoppingBtn=page.locator("button#continue-shopping");
         this.checkoutButton=page.getByRole('button',{name:"Checkout"});
         this.cartoption = page.locator("//a[@data-test='shopping-cart-link']");
+        this.cartoption=page.locator("a.shopping_cart_link");
     }
 
     //methods

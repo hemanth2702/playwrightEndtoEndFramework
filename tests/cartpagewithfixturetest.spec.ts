@@ -52,7 +52,7 @@ test("test for continue shopping and add new product into cart", async({cartPage
   
 })
 
-test("test validate chcekout page launch", async({cartPage})=>{
+test("test validate checkout page launch", async({cartPage})=>{
   await cartPage.gotoCartPage();
   await cartPage.gotoCheckOutPage();
   expect(await cartPage.getPageUrl()).toBe("https://www.saucedemo.com/checkout-step-one.html");
