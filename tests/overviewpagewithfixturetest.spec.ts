@@ -1,11 +1,12 @@
 import {expect, test} from "../src/fixtures/pagefixtures.js";
 import {readExcelFileSheetwise} from "../src/utilities/ExcelFileReading.js";
 
-test.beforeEach(async({loginPage, inventoryPage,cartPage})=>{
+test.beforeEach(async({loginPage, inventoryPage, cartPage})=>{
 
     // let data =readExcelFileSheetwise("loginData",0);
     // await loginPage.doLogin(data.username, data.password);
     await loginPage.doLogin(process.env.APPUSERNAME!,process.env.APPPASSWORD!);
+    await inventoryPage.waitUtil();
     // let ivnpageData = readExcelFileSheetwise("inventoryPage",0);
     // await inventoryPage.addProductIntoCart(ivnpageData.productname1);
     await inventoryPage.addProductIntoCart("Sauce Labs Fleece Jacket")
