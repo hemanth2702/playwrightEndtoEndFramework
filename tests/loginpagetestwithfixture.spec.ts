@@ -1,5 +1,4 @@
 import {test,expect} from "../src/fixtures/pagefixtures.js"
-import { LoginPage } from "../src/pages/LoginPage.js";
 import {readExcelFileSheetwise} from "../src/utilities/ExcelFileReading.js"
 import { readExcelFileDDT } from "../src/utilities/ExcelDDT.js"
 

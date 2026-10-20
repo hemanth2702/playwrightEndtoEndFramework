@@ -15,9 +15,10 @@ private readonly cartOption;
 constructor(page:Page)
 {
     super(page)
-        this.productList=page.locator("div.inventory_container div.inventory_item_name");
+        this.productList=page.locator("div.inventory_container div.inventory_item_name ");
         this.footerLinks=page.locator("footer a");
-        this.addToCartButton=page.locator("button[class*='btn_small btn_inventory']");
+        //this.addToCartButton=page.locator("button[class*='btn_small btn_inventory']");
+         this.addToCartButton=page.locator("//button[text()='Add to cart']");
         this.cartOption=page.locator("a.shopping_cart_link");
 }
 
@@ -35,11 +36,11 @@ async getProductDetails():Promise<string[]>
 
 async addProductIntoCart(pname:string)
 {
-   let allProducts:Locator[] = await this.productList.all()
+   let allProducts:Locator[] = await this.productList.all();
    for(let Product of allProducts){
-    let productName = await Product.innerText();
-    //if((await Product.innerText()).includes(pname))
-    if(productName.trim()===pname.trim())
+    //let productName = await Product.innerText();
+    if((await Product.innerText()).includes(pname))
+    //if(productName.trim()===pname.trim())
     {
         //select
         await Product.click();
@@ -51,6 +52,7 @@ async addProductIntoCart(pname:string)
     
    }
    //add the product into cart
+   await this.waitUtil();
     await this.addToCartButton.click();
     console.log(pname +" :added into cart");
   // throw new Error("Product not found: " + pname);

@@ -6,11 +6,13 @@ test.beforeEach(async({loginPage, inventoryPage, cartPage})=>{
 // let data = readExcelFileSheetwise("loginData",0);
 // await loginPage.doLogin(data.username,data.password);
 await loginPage.doLogin(process.env.APPUSERNAME!,process.env.APPPASSWORD!);
-//await inventoryPage.waitUtil();
-let ivnPagedata = readExcelFileSheetwise("inventoryPage",0);
-await inventoryPage.addProductIntoCart(ivnPagedata.productname1);
+await inventoryPage.waitUtil();
+//let ivnPagedata = readExcelFileSheetwise("inventoryPage",0);
+//await inventoryPage.addProductIntoCart(ivnPagedata.productname1);
+await inventoryPage.addProductIntoCart("Sauce Labs Fleece Jacket")
 await cartPage.gotoCartPage();
 await cartPage.gotoCheckOutPage();
+await cartPage.waitUtil();
 
 })
 

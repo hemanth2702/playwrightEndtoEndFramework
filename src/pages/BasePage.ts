@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+ import { Page } from "@playwright/test";
 
 export class BasePage
 {
@@ -25,7 +25,7 @@ export class BasePage
 
      async waitUtil():Promise<void>
     {
-        await this.page.waitForTimeout(1500);
+        await this.page.waitForTimeout(2000);
     }
 
 }

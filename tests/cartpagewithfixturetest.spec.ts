@@ -1,17 +1,18 @@
 import {test, expect} from "../src/fixtures/pagefixtures.js"
-import { CartPage } from "../src/pages/CartPage.js";
 import { readExcelFileSheetwise } from "../src/utilities/ExcelFileReading.js";
 
 test.beforeEach(async({loginPage, inventoryPage})=>{
     // let data = readExcelFileSheetwise("loginData",0)
     // await loginPage.doLogin(data.username,data.password);
     await loginPage.doLogin(process.env.APPUSERNAME!,process.env.APPPASSWORD!);
-      let ivpagedata = readExcelFileSheetwise("inventoryPage",0)
-    await inventoryPage.addProductIntoCart(ivpagedata.productname1);
+      await inventoryPage.waitUtil();
+      //let ivpagedata = readExcelFileSheetwise("inventoryPage",0)
+    await inventoryPage.addProductIntoCart("Sauce Labs Bolt T-Shirt");
 })
 
 test("test for cart page launch",async({cartPage})=>{
 await cartPage.gotoCartPage();
+await cartPage.waitUtil();
 expect(await cartPage.getPageUrl()).toContain("cart");
 console.log("user navigated to cart page!");
 
@@ -38,9 +39,11 @@ test("test for remove product",async({cartPage})=>{
 test("test for continue shopping and add new product into cart", async({cartPage, inventoryPage})=>{
   await cartPage.gotoCartPage();
   await cartPage.doContinueShopping();
+  await inventoryPage.waitUtil();
   //product2
-  let ivpagedata =readExcelFileSheetwise("inventoryPage",0);
-  await inventoryPage.addProductIntoCart(ivpagedata.productname2);
+  //let ivpagedata =readExcelFileSheetwise("inventoryPage",0);
+  //await inventoryPage.addProductIntoCart(ivpagedata.productname2);
+  await inventoryPage.addProductIntoCart("Sauce Labs Backpack")
   await inventoryPage.waitUtil();
   await inventoryPage.gotoCartPage();
   let data= await cartPage.getCartProductDetails();

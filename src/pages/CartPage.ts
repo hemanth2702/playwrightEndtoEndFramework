@@ -9,7 +9,7 @@ private readonly productName;
 private readonly removeButton;
 private readonly continueShoppingBtn;
 private readonly checkoutButton;
-private readonly cartoption
+private readonly cartoption;
 
     //constructors
     constructor(page:Page)
