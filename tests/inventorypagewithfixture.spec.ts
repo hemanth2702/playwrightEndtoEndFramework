@@ -31,6 +31,7 @@ test("test for add product into cart",async({loginPage, inventoryPage})=>{
 //   let data = readExcelFileSheetwise("loginData",0);
 // await loginPage.doLogin(data.username,data.password);
 await loginPage.doLogin(process.env.APPUSERNAME!,process.env.APPPASSWORD!);
+await loginPage.waitUtil();
     //let ivpagedata = readExcelFileSheetwise("inventoryPage",0)
     //await inventoryPage.addProductIntoCart(ivpagedata.productname1);
     await inventoryPage.addProductIntoCart("Sauce Labs Fleece Jacket")

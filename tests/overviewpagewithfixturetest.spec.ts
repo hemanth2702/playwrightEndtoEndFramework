@@ -11,6 +11,7 @@ test.beforeEach(async({loginPage, inventoryPage,cartPage})=>{
     await inventoryPage.addProductIntoCart("Sauce Labs Fleece Jacket")
     await cartPage.gotoCartPage();
     await cartPage.gotoCheckOutPage();
+    await cartPage.waitUtil();
 
 })
 
