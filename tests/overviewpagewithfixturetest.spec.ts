@@ -18,9 +18,9 @@ test.beforeEach(async({loginPage, inventoryPage,cartPage})=>{
 test("test for complete checkout process",async({checkoutPage, overviewPage})=>{
 let data = readExcelFileSheetwise("checkoutPage",0);
 await checkoutPage.doContinueCheckout(data.firstname,data.lastname,data.postalcode);
-await overviewPage.doFinishPurchase();
-let paymentDetails = await overviewPage.getPaymentDetails();
-console.log(paymentDetails);
+await overviewPage.doFinishTheProcess();
+// let paymentDetails = await overviewPage.getPaymentDetails();
+// console.log(paymentDetails);
 let message = await overviewPage.getSuccessMessage();
 expect(message).toBe("Thank you for your order!");
 

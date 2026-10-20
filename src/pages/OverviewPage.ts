@@ -16,7 +16,8 @@ export class OverviewPage extends BasePage
         this.productName=page.locator("div.inventory_item_name");
         this.paymentDetails=page.locator("div.summary_info div[class$='label']");
         this.finishButton=page.getByRole('button',{name:'Finish'});
-        this.successMessage=page.getByRole('heading',{name:'Thank you for your order!',level:2});
+        //this.successMessage=page.getByRole('heading',{name:'Thank you for your order!',level:2});
+        this.successMessage=page.getByRole('heading',{level:2});
     }
 
     //methods
@@ -30,7 +31,7 @@ export class OverviewPage extends BasePage
         return await this.paymentDetails.allInnerTexts();
     }
 
-    async doFinishPurchase():Promise<void>
+    async doFinishTheProcess():Promise<void>
     {
         return await this.finishButton.click();
     }
