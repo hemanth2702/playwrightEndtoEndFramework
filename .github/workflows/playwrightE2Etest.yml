@@ -220,7 +220,7 @@ jobs:
           echo "          CUSTOMIZING ALLURE REPORT"
           echo "=================================================="
 
-          node src/allure/customize-allure-report.js
+          node src/allure/customize-allure-report.mjs
 
 
       # ========================================================
