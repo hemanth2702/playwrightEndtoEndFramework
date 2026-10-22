@@ -1,0 +1,32 @@
+{
+  bookingid: 1261,
+  booking: {
+    firstname: 'Jim',
+    lastname: 'Brown',
+    totalprice: 111,
+    depositpaid: true,
+    bookingdates: { checkin: '2026-09-16', checkout: '2026-09-16' },
+    additionalneeds: 'Breakfast'
+  }
+}
+New booking created with bookingid:1261
+Get the booking details using id: 1261
+{
+  firstname: 'Jim',
+  lastname: 'Brown',
+  totalprice: 111,
+  depositpaid: true,
+  bookingdates: { checkin: '2026-09-16', checkout: '2026-09-16' },
+  additionalneeds: 'Breakfast'
+}
+{ token: '4f3bc14a73aa5e5' }
+Token generated: 4f3bc14a73aa5e5
+partial updated booking is:  {
+  firstname: 'James',
+  lastname: 'Brown',
+  totalprice: 111,
+  depositpaid: true,
+  bookingdates: { checkin: '2026-09-16', checkout: '2026-09-16' },
+  additionalneeds: 'Breakfast'
+}
+current booking is partially updated successfully!

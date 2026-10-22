@@ -1,0 +1,22 @@
+status code is:  200
+{
+  bookingid: 1243,
+  booking: {
+    firstname: 'Jim',
+    lastname: 'Brown',
+    totalprice: 111,
+    depositpaid: true,
+    bookingdates: { checkin: '2026-09-16', checkout: '2026-09-16' },
+    additionalneeds: 'Breakfast'
+  }
+}
+New booking created with bookingid:  1243
+Get the booking details using id: 1243
+{
+  firstname: 'Jim',
+  lastname: 'Brown',
+  totalprice: 111,
+  depositpaid: true,
+  bookingdates: { checkin: '2026-09-16', checkout: '2026-09-16' },
+  additionalneeds: 'Breakfast'
+}

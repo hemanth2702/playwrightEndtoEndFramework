@@ -1,0 +1,14 @@
+status code is:  200
+status message is: OK
+{
+  bookingid: 1233,
+  booking: {
+    firstname: 'Sally',
+    lastname: 'Brown',
+    totalprice: 111,
+    depositpaid: true,
+    bookingdates: { checkin: '2026-09-15', checkout: '2014-09-16' },
+    additionalneeds: 'Breakfast'
+  }
+}
+First name matched:  Sally

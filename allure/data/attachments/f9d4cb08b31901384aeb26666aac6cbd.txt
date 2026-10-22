@@ -1,0 +1,15 @@
+API intercepted!
+URL:https://demo.playwright.dev/api-mocking/
+RequestMethod:GET
+API intercepted!
+URL:https://demo.playwright.dev/api-mocking/assets/index-070af109.js
+RequestMethod:GET
+API intercepted!
+URL:https://demo.playwright.dev/api-mocking/assets/index-6d10c910.css
+RequestMethod:GET
+API intercepted!
+URL:https://demo.playwright.dev/api-mocking/api/v1/fruits
+RequestMethod:GET
+API intercepted!
+URL:https://playwright.dev/img/playwright-logo.svg
+RequestMethod:GET

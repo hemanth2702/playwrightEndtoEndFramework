@@ -13,7 +13,7 @@
     "src/**/*.ts",
     "tests/**/*.ts",
     "playwright.config.ts"
-, "src/pages", "nonExecute/loginpagefirsttesthooks.spec.ts", "nonExecute/loginpagefirsttest.spec.ts", "nonExecute/inventorypagewithhooks.spec.ts"  ],
+, "src/pages", "nonExecute/loginpagefirsttesthooks.spec.ts", "nonExecute/loginpagefirsttest.spec.ts", "nonExecute/inventorypagewithhooks.spec.ts", "src/allure/assets/customize-allure-report.js"  ],
   "exclude": [
     "node_modules"
   ]

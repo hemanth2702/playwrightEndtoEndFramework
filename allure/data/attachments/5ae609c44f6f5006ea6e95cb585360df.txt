@@ -1,0 +1,27 @@
+{
+  bookingid: 1265,
+  booking: {
+    firstname: 'Jim',
+    lastname: 'Brown',
+    totalprice: 111,
+    depositpaid: true,
+    bookingdates: { checkin: '2026-09-16', checkout: '2026-09-16' },
+    additionalneeds: 'Breakfast'
+  }
+}
+New booking created with bookingid:1265
+Get the booking details using id: 1265
+{
+  firstname: 'Jim',
+  lastname: 'Brown',
+  totalprice: 111,
+  depositpaid: true,
+  bookingdates: { checkin: '2026-09-16', checkout: '2026-09-16' },
+  additionalneeds: 'Breakfast'
+}
+{ token: '4f68ef81c748c54' }
+Token generated: 4f68ef81c748c54
+status message is: Created
+Get:Get the booking details...
+Not Found
+Record is deleted! Not Found
