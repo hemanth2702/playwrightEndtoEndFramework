@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 
+
 async function sendEmail() {
 
     console.log('1️⃣ Starting email process...');
