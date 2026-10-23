@@ -1000,7 +1000,8 @@ jobs:
         env:
           MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
           MAIL_APP_PASSWORD: ${{ secrets.MAIL_APP_PASSWORD }}
-          ALLURE_REPORT_URL: https://github.com/hemanth2702/playwrightEndtoEndFramework/
+          #need to copy url from the pages
+          ALLURE_REPORT_URL: https://hemanth2702.github.io/playwrightEndtoEndFramework/
           RECIPIENT_EMAILS: ${{ secrets.RECIPIENT_EMAIL }}
 
 
