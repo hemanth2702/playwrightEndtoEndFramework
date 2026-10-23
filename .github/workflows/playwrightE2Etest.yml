@@ -992,7 +992,7 @@ jobs:
             echo "❌ RECIPIENT_EMAILS is missing"
          fi
         env:
-          RECIPIENT_EMAILS: ${{ secrets.RECIPIENT_EMAIL }}
+          RECIPIENT_EMAILS: ${{ secrets.RECIPIENT_EMAILS }}
           
       - name: Send Allure Report Email
         run: |
@@ -1002,7 +1002,7 @@ jobs:
           MAIL_APP_PASSWORD: ${{ secrets.MAIL_APP_PASSWORD }}
           #need to copy url from the pages
           ALLURE_REPORT_URL: https://hemanth2702.github.io/playwrightEndtoEndFramework/
-          RECIPIENT_EMAILS: ${{ secrets.RECIPIENT_EMAIL }}
+          RECIPIENT_EMAILS: ${{ secrets.RECIPIENT_EMAILS }}
 
 
   # ============================================================
