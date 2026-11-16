@@ -266,7 +266,7 @@ pipeline {
                 nodejs('Nodejs24') {
 
                     bat '''
-                        node src/allure/customize-allure-report.js
+                        node src/allure/customize-allure-report.mjs
                     '''
                 }
             }
