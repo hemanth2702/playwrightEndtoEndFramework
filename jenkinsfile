@@ -127,7 +127,7 @@ pipeline {
                 withCredentials([
 
                     string(
-                        credentialsId: 'app-base-url',
+                        credentialsId: 'APP_URL',
                         variable: 'APP_URL'
                     )
 
