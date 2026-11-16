@@ -6,7 +6,7 @@ pipeline {
 
         choice(
             name: 'ENVIRONMENT',
-            choices: ['QA', 'stage', 'dev'],
+            choices: ['qa', 'stage', 'dev'],
             description: 'Select environment'
         )
     }
