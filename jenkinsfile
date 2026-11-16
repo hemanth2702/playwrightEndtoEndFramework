@@ -55,11 +55,13 @@ pipeline {
                 echo 'CHECK NODE SETUP'
                 echo '======================================'
 
-                nodejs('Node24') {
+                nodejs('Nodejs24') {
 
                     bat '''
                         node --version
                         npm --version
+                         where node
+                        where npm
                     '''
                 }
             }
@@ -78,7 +80,7 @@ pipeline {
                 echo 'INSTALL DEPENDENCIES'
                 echo '======================================'
 
-                nodejs('Node24') {
+                nodejs('Nodejs24') {
 
                     bat '''
                         npm ci
@@ -100,7 +102,7 @@ pipeline {
                 echo 'INSTALL PLAYWRIGHT CHROMIUM'
                 echo '======================================'
 
-                nodejs('Node24') {
+                nodejs('Nodejs24') {
 
                     bat '''
                         npx playwright install chromium
@@ -131,7 +133,7 @@ pipeline {
 
                 ]) {
 
-                    nodejs('Node24') {
+                    nodejs('Nodejs24') {
 
                         bat '''
                             echo Environment will be configured from Jenkins credentials.
@@ -212,7 +214,7 @@ pipeline {
 
                 ]) {
 
-                    nodejs('Node24') {
+                    nodejs('Nodejs24') {
 
                         bat """
                             set ENV=${params.ENVIRONMENT.toLowerCase()}
@@ -239,7 +241,7 @@ pipeline {
                 echo 'GENERATE ALLURE REPORT'
                 echo '======================================'
 
-                nodejs('Node24') {
+                nodejs('Nodejs24') {
 
                     bat '''
                         npx allure generate allure-results -o allure-report --clean
@@ -261,7 +263,7 @@ pipeline {
                 echo 'CUSTOMIZE ALLURE REPORT'
                 echo '======================================'
 
-                nodejs('Node24') {
+                nodejs('Nodejs24') {
 
                     bat '''
                         node src/allure/customize-allure-report.js
@@ -374,7 +376,7 @@ pipeline {
                             "BUILD_URL=${env.BUILD_URL}",
                             "ALLURE_REPORT_URL=${env.BUILD_URL}allure/"
                         ]) {
-                            nodejs('Node24') {
+                            nodejs('Nodejs24') {
                                 def emailExitCode = bat(
                                     script: 'npx tsx src/email/send-report-email.ts',
                                     returnStatus: true
