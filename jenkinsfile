@@ -182,25 +182,25 @@ pipeline {
                         variable: 'APPPASSWORD'
                     ),
 
-                    string(
-                        credentialsId: 'product',
-                        variable: 'PRODUCT'
-                    ),
+                    // string(
+                    //     credentialsId: 'product',
+                    //     variable: 'PRODUCT'
+                    // ),
 
-                    string(
-                        credentialsId: 'first-name',
-                        variable: 'FN'
-                    ),
+                    // string(
+                    //     credentialsId: 'first-name',
+                    //     variable: 'FN'
+                    // ),
 
-                    string(
-                        credentialsId: 'last-name',
-                        variable: 'LN'
-                    ),
+                    // string(
+                    //     credentialsId: 'last-name',
+                    //     variable: 'LN'
+                    // ),
 
-                    string(
-                        credentialsId: 'postal-code',
-                        variable: 'PC'
-                    ),
+                    // string(
+                    //     credentialsId: 'postal-code',
+                    //     variable: 'PC'
+                    // ),
 
                     string(
                         credentialsId: 'API_URL',
